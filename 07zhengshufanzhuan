@@ -1,0 +1,21 @@
+class Solution {
+    public int reverse(int x) {
+      String fuhao = "";
+	     String data = String.valueOf(x);
+	     String result = "";
+	     if(data.substring(0,1).equals("-")){
+	    	 fuhao = "-";
+	    	 data = data.substring(1,data.length());
+	     }
+	     for(int i=0;i<data.length();i++){
+	    	 result +=data.substring(data.length()-i-1,data.length()-i);
+	     }
+	     result = fuhao+result;
+	     try{
+	    	 x= Integer.valueOf(result);
+	     }catch(Exception e){
+	    	 return 0;
+	     }
+	     return x;
+    }
+}
