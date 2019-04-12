@@ -13,3 +13,24 @@ class Solution {
 }
 
 //map承载以后进行遍历
+
+
+2019.4.12
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = null;
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int i=0;i<nums.length;i++){
+            for(Integer key : map.keySet()) 
+                if(target==nums[i]+key){
+                    result = new int[]{map.get(key),i};
+                    System.out.println(result);
+                }
+             map.put(nums[i],i);   
+            }
+        return result;
+        }
+    }
+    
+    多增加了一层嵌套，用map.KeySet方法代替一层循环。，上面的方法用的是直接通过map的get方法获取当前的内容解法。
